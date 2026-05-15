@@ -1,0 +1,14 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 1
+  metrics: count: method: 1
+
+  entity: lens: {
+    path: "/6c47a532fd034b93a4aa64b706cf0610": {
+      op: list: method: *GET
+    }
+  }
+
+}

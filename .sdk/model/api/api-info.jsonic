@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "API Support"
+        url: "https://lens.snapchat.com/6c47a532fd034b93a4aa64b706cf0610?share_id=fYLE8bhrBH8&locale=en-US"
+      }
+      description: "The Hano Lens by حنين العزاوي allows users to apply a unique and artistic filter to their selfies, enhancing facial features and adding a touch of creativity. This lens is ideal for makeup enthusiasts and those looking to explore various looks on the Snapchat platform."
+      servers: [
+        {
+          description: "Snapchat Lens API Server"
+          url: "https://lens.snapchat.com"
+        }
+      ]
+      title: "Hano Snapchat Lens"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

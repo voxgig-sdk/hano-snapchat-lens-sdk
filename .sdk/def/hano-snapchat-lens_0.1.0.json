@@ -1,0 +1,160 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Hano Snapchat Lens",
+    "description": "The Hano Lens by حنين العزاوي allows users to apply a unique and artistic filter to their selfies, enhancing facial features and adding a touch of creativity. This lens is ideal for makeup enthusiasts and those looking to explore various looks on the Snapchat platform.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "API Support",
+      "url": "https://lens.snapchat.com/6c47a532fd034b93a4aa64b706cf0610?share_id=fYLE8bhrBH8&locale=en-US"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://lens.snapchat.com",
+      "description": "Snapchat Lens API Server"
+    }
+  ],
+  "paths": {
+    "/6c47a532fd034b93a4aa64b706cf0610": {
+      "get": {
+        "summary": "Get Hano Lens Details",
+        "description": "Retrieves information about the Hano Lens, including lens metadata and sharing details. This lens applies a unique and artistic filter to selfies, enhancing facial features and adding creativity.",
+        "operationId": "getHanoLens",
+        "parameters": [
+          {
+            "name": "share_id",
+            "in": "query",
+            "description": "The unique sharing identifier for the lens",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "fYLE8bhrBH8"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "The locale for the lens display (e.g., en-US)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en-US",
+              "example": "en-US"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved Hano Lens details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "lens_id": {
+                      "type": "string",
+                      "description": "Unique identifier for the lens",
+                      "example": "6c47a532fd034b93a4aa64b706cf0610"
+                    },
+                    "lens_name": {
+                      "type": "string",
+                      "description": "Name of the lens",
+                      "example": "Hano Lens"
+                    },
+                    "creator": {
+                      "type": "string",
+                      "description": "Creator of the lens",
+                      "example": "حنين العزاوي"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Description of the lens features and functionality"
+                    },
+                    "share_url": {
+                      "type": "string",
+                      "description": "URL for sharing the lens"
+                    },
+                    "locale": {
+                      "type": "string",
+                      "description": "Locale setting for the lens"
+                    },
+                    "features": {
+                      "type": "array",
+                      "description": "List of features provided by the lens",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "facial enhancement",
+                        "artistic filter",
+                        "makeup effects"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Lens not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message indicating lens was not found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Lens"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Lens",
+      "description": "Operations related to Snapchat Lens retrieval and information"
+    }
+  ]
+}

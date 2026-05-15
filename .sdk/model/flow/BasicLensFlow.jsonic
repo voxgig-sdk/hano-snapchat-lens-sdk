@@ -1,0 +1,22 @@
+# BasicLensFlow
+
+main: kit: flow: BasicLensFlow:
+{
+  entity: "lens",
+  kind: "basic",
+  name: "BasicLensFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "lens_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLensFlow"
+}
