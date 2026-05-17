@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/hano-snapchat-lens-sdk/core"
+	"github.com/voxgig-sdk/hano-snapchat-lens-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/hano-snapchat-lens-sdk/go/utility/struct"
 )
 
 type LensEntity struct {

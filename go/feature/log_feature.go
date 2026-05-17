@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/hano-snapchat-lens-sdk/core"
+	"github.com/voxgig-sdk/hano-snapchat-lens-sdk/go/core"
 )
 
 type LogFeature struct {

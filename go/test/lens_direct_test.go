@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/hano-snapchat-lens-sdk"
-	"github.com/voxgig-sdk/hano-snapchat-lens-sdk/core"
+	sdk "github.com/voxgig-sdk/hano-snapchat-lens-sdk/go"
+	"github.com/voxgig-sdk/hano-snapchat-lens-sdk/go/core"
 )
 
 func TestLensDirect(t *testing.T) {

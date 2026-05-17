@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/hano-snapchat-lens-sdk"
+	sdk "github.com/voxgig-sdk/hano-snapchat-lens-sdk/go"
 )
 
 func TestExists(t *testing.T) {
