@@ -17,7 +17,16 @@
           }
         ],
         "title": "Hano Snapchat Lens",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Not a programmable API — a Snapchat Lens (camera filter) hosted on lens.snapchat.com",
+        "homepage": "https://lens.snapchat.com",
+        "license_short": "Subject to Snap Inc.'s Terms of Service and Community Guidelines.",
+        "license_md": "- Snapchat Lenses are content within the Snapchat app, governed by [Snap Inc.'s Terms of Service](https://snap.com/en-US/terms).\n- Individual Lenses are typically authored by creators (often via [Lens Studio](https://ar.snap.com/lens-studio) or Easy Lens) and remain the property of their creators and/or Snap Inc.\n- There is no public, programmable HTTP API associated with this Lens.",
+        "about_md": "**Hano Snapchat Lens** is not a public web API. It is a [Snapchat Lens](https://www.snapchat.com/lens) — an in-app augmented-reality camera filter that users apply to photos and videos inside the Snapchat mobile app. The `lens.snapchat.com` host serves shareable Lens preview/landing pages, not JSON endpoints.\n\nLenses are typically built by independent creators using Snap's [Lens Studio](https://ar.snap.com/lens-studio) or Easy Lens tools and distributed through Snapchat. They run client-side on the user's device as AR effects (face filters, world effects, music-synced visuals, etc.) — not as request/response services you can call from code.\n\nIf you were looking for a programmable Snapchat developer interface, see Snap's developer site at [kit.snapchat.com](https://kit.snapchat.com) or the [Camera Kit](https://ar.snap.com/camera-kit) SDK; those are separate from this Lens URL.\n\nThis entry exists for catalogue completeness — there are no callable endpoints to document.",
+        "entity_desc": {
+          "lens": "Represents a single Snapchat Lens (an AR camera filter) reachable via a `lens.snapchat.com` share URL; it is consumed inside the Snapchat app, not via a JSON API."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -25,7 +34,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "lens": {

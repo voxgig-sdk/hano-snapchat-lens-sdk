@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'HANOSNAPCHATLENS_TEST_LENS_ENTID': {},
     'HANOSNAPCHATLENS_TEST_LIVE': 'FALSE',
-    'HANOSNAPCHATLENS_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.HANOSNAPCHATLENS_TEST_LIVE
 
   if (live) {
     const client = new HanoSnapchatLensSDK({
-      apikey: env.HANOSNAPCHATLENS_APIKEY,
     })
 
     let idmap: any = env['HANOSNAPCHATLENS_TEST_LENS_ENTID']

@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'HANO_SNAPCHAT_LENS_TEST_LENS_ENTID': idmap,
     'HANO_SNAPCHAT_LENS_TEST_LIVE': 'FALSE',
     'HANO_SNAPCHAT_LENS_TEST_EXPLAIN': 'FALSE',
-    'HANO_SNAPCHAT_LENS_APIKEY': 'NONE',
   })
 
   idmap = env['HANO_SNAPCHAT_LENS_TEST_LENS_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new HanoSnapchatLensSDK(merge([
       {
-        apikey: env.HANO_SNAPCHAT_LENS_APIKEY,
       },
       extra
     ]))

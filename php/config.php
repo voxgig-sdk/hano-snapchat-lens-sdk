@@ -20,9 +20,6 @@ class HanoSnapchatLensConfig
             ],
             "options" => [
                 "base" => "https://lens.snapchat.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
