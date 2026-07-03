@@ -93,12 +93,14 @@ func lensDirectSetup(mockres any) *lensDirectSetupResult {
 	env := envOverride(map[string]any{
 		"HANOSNAPCHATLENS_TEST_LENS_ENTID": map[string]any{},
 		"HANOSNAPCHATLENS_TEST_LIVE":    "FALSE",
+		"HANOSNAPCHATLENS_APIKEY":       "NONE",
 	})
 
 	live := env["HANOSNAPCHATLENS_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["HANOSNAPCHATLENS_APIKEY"],
 		}
 		client := sdk.NewHanoSnapchatLensSDK(mergedOpts)
 

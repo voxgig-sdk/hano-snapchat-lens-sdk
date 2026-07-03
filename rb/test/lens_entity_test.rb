@@ -83,6 +83,7 @@ def lens_basic_setup(extra)
     "HANOSNAPCHATLENS_TEST_LENS_ENTID" => idmap,
     "HANOSNAPCHATLENS_TEST_LIVE" => "FALSE",
     "HANOSNAPCHATLENS_TEST_EXPLAIN" => "FALSE",
+    "HANOSNAPCHATLENS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,6 +95,7 @@ def lens_basic_setup(extra)
   if env["HANOSNAPCHATLENS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["HANOSNAPCHATLENS_APIKEY"],
       },
       extra || {},
     ])

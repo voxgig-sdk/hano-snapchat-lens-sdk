@@ -1,6 +1,11 @@
 # HanoSnapchatLens Ruby SDK
 
-The Ruby SDK for the HanoSnapchatLens API. Provides an entity-oriented interface using idiomatic Ruby conventions.
+
+
+The Ruby SDK for the HanoSnapchatLens API — an entity-oriented client using idiomatic Ruby conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -31,13 +36,15 @@ loading a specific record.
 ```ruby
 require_relative "HanoSnapchatLens_sdk"
 
-client = HanoSnapchatLensSDK.new({})
+client = HanoSnapchatLensSDK.new({
+  "apikey" => ENV["HANO-SNAPCHAT-LENS_APIKEY"],
+})
 ```
 
 ### 2. List lenss
 
 ```ruby
-result, err = client.Lens(nil).list(nil, nil)
+result, err = client.Lens().list
 raise err if err
 
 if result.is_a?(Array)
@@ -89,11 +96,9 @@ puts fetchdef["headers"]
 Create a mock client for unit testing — no server required:
 
 ```ruby
-client = HanoSnapchatLensSDK.test(nil, nil)
+client = HanoSnapchatLensSDK.test
 
-result, err = client.HanoSnapchatLens(nil).load(
-  { "id" => "test01" }, nil
-)
+result, err = client.HanoSnapchatLens().load({ "id" => "test01" })
 # result contains mock response data
 ```
 
@@ -125,6 +130,7 @@ Create a `.env.local` file at the project root:
 
 ```
 HANO-SNAPCHAT-LENS_TEST_LIVE=TRUE
+HANO-SNAPCHAT-LENS_APIKEY=<your-key>
 ```
 
 Then run:
@@ -147,6 +153,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `String` | API key for authentication. |
 | `base` | `String` | Base URL of the API server. |
 | `prefix` | `String` | URL path prefix prepended to all requests. |
 | `suffix` | `String` | URL path suffix appended to all requests. |

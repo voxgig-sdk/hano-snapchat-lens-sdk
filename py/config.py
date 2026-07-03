@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://lens.snapchat.com",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -26,80 +29,82 @@ def make_config():
       "lens": {
         "fields": [
           {
+            "active": True,
             "name": "creator",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "description",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "feature",
             "req": False,
             "type": "`$ARRAY`",
-            "active": True,
             "index$": 2,
           },
           {
+            "active": True,
             "name": "lens_id",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 3,
           },
           {
+            "active": True,
             "name": "lens_name",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 4,
           },
           {
+            "active": True,
             "name": "locale",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 5,
           },
           {
+            "active": True,
             "name": "share_url",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 6,
           },
         ],
         "name": "lens",
         "op": {
           "list": {
+            "input": "data",
             "name": "list",
             "points": [
               {
+                "active": True,
                 "args": {
                   "query": [
                     {
+                      "active": True,
                       "example": "en-US",
                       "kind": "query",
                       "name": "locale",
                       "orig": "locale",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                     {
+                      "active": True,
                       "example": "fYLE8bhrBH8",
                       "kind": "query",
                       "name": "share_id",
                       "orig": "share_id",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                 },
@@ -118,11 +123,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "list",
           },
         },

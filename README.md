@@ -1,18 +1,8 @@
 # HanoSnapchatLens SDK
 
-Not a programmable API — a Snapchat Lens (camera filter) hosted on lens.snapchat.com
+Hano Snapchat Lens client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Hano Snapchat Lens
-
-**Hano Snapchat Lens** is not a public web API. It is a [Snapchat Lens](https://www.snapchat.com/lens) — an in-app augmented-reality camera filter that users apply to photos and videos inside the Snapchat mobile app. The `lens.snapchat.com` host serves shareable Lens preview/landing pages, not JSON endpoints.
-
-Lenses are typically built by independent creators using Snap's [Lens Studio](https://ar.snap.com/lens-studio) or Easy Lens tools and distributed through Snapchat. They run client-side on the user's device as AR effects (face filters, world effects, music-synced visuals, etc.) — not as request/response services you can call from code.
-
-If you were looking for a programmable Snapchat developer interface, see Snap's developer site at [kit.snapchat.com](https://kit.snapchat.com) or the [Camera Kit](https://ar.snap.com/camera-kit) SDK; those are separate from this Lens URL.
-
-This entry exists for catalogue completeness — there are no callable endpoints to document.
 
 ## Try it
 
@@ -46,29 +36,31 @@ gem install hano-snapchat-lens-sdk
 luarocks install hano-snapchat-lens-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { HanoSnapchatLensSDK } from 'hano-snapchat-lens'
 
-const client = new HanoSnapchatLensSDK({})
+const client = new HanoSnapchatLensSDK({
+  apikey: process.env.HANO-SNAPCHAT-LENS_APIKEY,
+})
 
 // List all lenss
 const lenss = await client.Lens().list()
+console.log(lenss.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Lens** | Represents a single Snapchat Lens (an AR camera filter) reachable via a `lens.snapchat.com` share URL; it is consumed inside the Snapchat app, not via a JSON API. | `/6c47a532fd034b93a4aa64b706cf0610` |
+| **Lens** |  | `/6c47a532fd034b93a4aa64b706cf0610` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from hanosnapchatlens_sdk import HanoSnapchatLensSDK
 
-client = HanoSnapchatLensSDK({})
+client = HanoSnapchatLensSDK({
+    "apikey": os.environ.get("HANO-SNAPCHAT-LENS_APIKEY"),
+})
 
 # List all lenss
-lenss, err = client.Lens(None).list(None, None)
+lenss, err = client.Lens().list()
+print(lenss)
 ```
 
 ### PHP
@@ -122,10 +118,13 @@ lenss, err = client.Lens(None).list(None, None)
 <?php
 require_once 'hanosnapchatlens_sdk.php';
 
-$client = new HanoSnapchatLensSDK([]);
+$client = new HanoSnapchatLensSDK([
+    "apikey" => getenv("HANO-SNAPCHAT-LENS_APIKEY"),
+]);
 
 // List all lenss
-[$lenss, $err] = $client->Lens(null)->list(null, null);
+[$lenss, $err] = $client->Lens()->list();
+print_r($lenss);
 ```
 
 ### Golang
@@ -133,10 +132,13 @@ $client = new HanoSnapchatLensSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/hano-snapchat-lens-sdk/go"
 
-client := sdk.NewHanoSnapchatLensSDK(map[string]any{})
+client := sdk.NewHanoSnapchatLensSDK(map[string]any{
+    "apikey": os.Getenv("HANO-SNAPCHAT-LENS_APIKEY"),
+})
 
 // List all lenss
 lenss, err := client.Lens(nil).List(nil, nil)
+fmt.Println(lenss)
 ```
 
 ### Ruby
@@ -144,10 +146,13 @@ lenss, err := client.Lens(nil).List(nil, nil)
 ```ruby
 require_relative "HanoSnapchatLens_sdk"
 
-client = HanoSnapchatLensSDK.new({})
+client = HanoSnapchatLensSDK.new({
+  "apikey" => ENV["HANO-SNAPCHAT-LENS_APIKEY"],
+})
 
 # List all lenss
-lenss, err = client.Lens(nil).list(nil, nil)
+lenss, err = client.Lens().list
+puts lenss
 ```
 
 ### Lua
@@ -155,10 +160,13 @@ lenss, err = client.Lens(nil).list(nil, nil)
 ```lua
 local sdk = require("hano-snapchat-lens_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("HANO-SNAPCHAT-LENS_APIKEY"),
+})
 
 -- List all lenss
-local lenss, err = client:Lens(nil):list(nil, nil)
+local lenss, err = client:Lens():list()
+print(lenss)
 ```
 
 ## Unit testing in offline mode
@@ -177,25 +185,21 @@ const result = await client.Lens().load({ id: 'test01' })
 ### Python
 
 ```python
-client = HanoSnapchatLensSDK.test(None, None)
-result, err = client.Lens(None).load(
-    {"id": "test01"}, None
-)
+client = HanoSnapchatLensSDK.test()
+result, err = client.Lens().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = HanoSnapchatLensSDK::test(null, null);
-[$result, $err] = $client->Lens(null)->load(
-    ["id" => "test01"], null
-);
+$client = HanoSnapchatLensSDK::test();
+[$result, $err] = $client->Lens()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Lens(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -204,19 +208,15 @@ result, err := client.Lens(nil).Load(
 ### Ruby
 
 ```ruby
-client = HanoSnapchatLensSDK.test(nil, nil)
-result, err = client.Lens(nil).load(
-  { "id" => "test01" }, nil
-)
+client = HanoSnapchatLensSDK.test
+result, err = client.Lens().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Lens(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Lens():load({ id = "test01" })
 ```
 
 ## How it works
@@ -320,14 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Hano Snapchat Lens
-
-- Upstream: [https://lens.snapchat.com](https://lens.snapchat.com)
-
-- Snapchat Lenses are content within the Snapchat app, governed by [Snap Inc.'s Terms of Service](https://snap.com/en-US/terms).
-- Individual Lenses are typically authored by creators (often via [Lens Studio](https://ar.snap.com/lens-studio) or Easy Lens) and remain the property of their creators and/or Snap Inc.
-- There is no public, programmable HTTP API associated with this Lens.
 
 ---
 

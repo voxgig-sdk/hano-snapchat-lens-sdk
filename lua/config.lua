@@ -14,6 +14,9 @@ local function make_config()
     },
     options = {
       base = "https://lens.snapchat.com",
+      auth = {
+        prefix = "Bearer",
+      },
       headers = {
         ["content-type"] = "application/json",
       },
@@ -25,80 +28,82 @@ local function make_config()
       ["lens"] = {
         ["fields"] = {
           {
+            ["active"] = true,
             ["name"] = "creator",
             ["req"] = false,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 0,
           },
           {
+            ["active"] = true,
             ["name"] = "description",
             ["req"] = false,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 1,
           },
           {
+            ["active"] = true,
             ["name"] = "feature",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
-            ["active"] = true,
             ["index$"] = 2,
           },
           {
+            ["active"] = true,
             ["name"] = "lens_id",
             ["req"] = false,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 3,
           },
           {
+            ["active"] = true,
             ["name"] = "lens_name",
             ["req"] = false,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 4,
           },
           {
+            ["active"] = true,
             ["name"] = "locale",
             ["req"] = false,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 5,
           },
           {
+            ["active"] = true,
             ["name"] = "share_url",
             ["req"] = false,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 6,
           },
         },
         ["name"] = "lens",
         ["op"] = {
           ["list"] = {
+            ["input"] = "data",
             ["name"] = "list",
             ["points"] = {
               {
+                ["active"] = true,
                 ["args"] = {
                   ["query"] = {
                     {
+                      ["active"] = true,
                       ["example"] = "en-US",
                       ["kind"] = "query",
                       ["name"] = "locale",
                       ["orig"] = "locale",
                       ["reqd"] = false,
                       ["type"] = "`$STRING`",
-                      ["active"] = true,
                     },
                     {
+                      ["active"] = true,
                       ["example"] = "fYLE8bhrBH8",
                       ["kind"] = "query",
                       ["name"] = "share_id",
                       ["orig"] = "share_id",
                       ["reqd"] = false,
                       ["type"] = "`$STRING`",
-                      ["active"] = true,
                     },
                   },
                 },
@@ -117,11 +122,9 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["active"] = true,
                 ["index$"] = 0,
               },
             },
-            ["input"] = "data",
             ["key$"] = "list",
           },
         },
