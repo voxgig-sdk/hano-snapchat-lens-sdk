@@ -10,13 +10,13 @@ The Ruby SDK for the HanoSnapchatLens API — an entity-oriented client using id
 
 ## Install
 ```bash
-gem install hano-snapchat-lens-sdk
+gem install voxgig-sdk-hano-snapchat-lens
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "hano-snapchat-lens-sdk"
+gem "voxgig-sdk-hano-snapchat-lens"
 ```
 
 Then run:

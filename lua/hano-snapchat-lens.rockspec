@@ -8,12 +8,14 @@ source = {
   dir = "hano-snapchat-lens-sdk/lua"
 }
 description = {
-  summary = "HanoSnapchatLens SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Hano Snapchat Lens public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/hano-snapchat-lens-sdk",
+  issues_url = "https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "hano-snapchat-lens" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

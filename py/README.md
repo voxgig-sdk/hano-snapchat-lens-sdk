@@ -10,7 +10,7 @@ The Python SDK for the HanoSnapchatLens API — an entity-oriented client follow
 
 ## Install
 ```bash
-pip install hano-snapchat-lens-sdk
+pip install voxgig-sdk-hano-snapchat-lens
 ```
 
 Or install from source:

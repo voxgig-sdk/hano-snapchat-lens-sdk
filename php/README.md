@@ -10,7 +10,7 @@ The PHP SDK for the HanoSnapchatLens API — an entity-oriented client using PHP
 
 ## Install
 ```bash
-composer require voxgig/hano-snapchat-lens-sdk
+composer require voxgig-sdk/hano-snapchat-lens
 ```
 
 

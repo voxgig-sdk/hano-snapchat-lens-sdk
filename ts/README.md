@@ -10,7 +10,7 @@ The TypeScript SDK for the HanoSnapchatLens API — a type-safe, entity-oriented
 
 ## Install
 ```bash
-npm install hano-snapchat-lens
+npm install @voxgig-sdk/hano-snapchat-lens
 ```
 ## Tutorial: your first API call
 
