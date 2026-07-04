@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch LensListMatch
+---@param ctrl? table
+---@return Lens[]
+---@return string? err
 function LensEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

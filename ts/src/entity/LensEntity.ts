@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Lens,
+  LensListMatch,
+} from '../HanoSnapchatLensTypes'
 
 // TODO: needs Entity superclass
-class LensEntity extends HanoSnapchatLensEntityBase {
+class LensEntity extends HanoSnapchatLensEntityBase<Lens> {
 
   constructor(client: HanoSnapchatLensSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class LensEntity extends HanoSnapchatLensEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: LensListMatch, ctrl?: Control): Promise<Lens[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class LensEntity extends HanoSnapchatLensEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Lens[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

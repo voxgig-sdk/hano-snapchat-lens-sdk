@@ -9,9 +9,12 @@ The TypeScript SDK for the HanoSnapchatLens API — a type-safe, entity-oriented
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/hano-snapchat-lens
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { HanoSnapchatLensSDK } from 'hano-snapchat-lens'
+import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens'
 
-const client = new HanoSnapchatLensSDK({
-  apikey: process.env.HANO-SNAPCHAT-LENS_APIKEY,
-})
+const client = new HanoSnapchatLensSDK()
 ```
 
 ### 2. List lenss
 
 ```ts
-const result = await client.Lens().list()
+const result = await client.lens.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = HanoSnapchatLensSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.lens.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new HanoSnapchatLensSDK({ apikey: '...' })
+const client = new HanoSnapchatLensSDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.lens
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new HanoSnapchatLensSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new HanoSnapchatLensSDK({
 Create a `.env.local` file at the project root:
 
 ```
-HANO-SNAPCHAT-LENS_TEST_LIVE=TRUE
-HANO-SNAPCHAT-LENS_APIKEY=<your-key>
+HANO_SNAPCHAT_LENS_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new HanoSnapchatLensSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new HanoSnapchatLensSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -274,7 +271,7 @@ API path: `/6c47a532fd034b93a4aa64b706cf0610`
 
 ### Lens
 
-Create an instance: `const lens = client.Lens()`
+Create an instance: `const lens = client.lens`
 
 #### Operations
 
@@ -297,7 +294,7 @@ Create an instance: `const lens = client.Lens()`
 #### Example: List
 
 ```ts
-const lenss = await client.Lens().list()
+const lenss = await client.lens.list()
 ```
 
 
@@ -358,7 +355,7 @@ hano-snapchat-lens/
 Import the SDK from the package root:
 
 ```ts
-import { HanoSnapchatLensSDK } from 'hano-snapchat-lens'
+import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens'
 ```
 
 ### Entity state
@@ -368,11 +365,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const lens = client.lens
+await lens.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// lens.data() now returns the loaded lens data
+// lens.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -245,6 +245,9 @@ func (sdk *HanoSnapchatLensSDK) Direct(fetchargs map[string]any) (map[string]any
 }
 
 
+// Lens returns a Lens entity bound to this client.
+// Idiomatic usage: client.Lens(nil).List(nil, nil) or
+// client.Lens(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *HanoSnapchatLensSDK) Lens(data map[string]any) HanoSnapchatLensEntity {
 	return NewLensEntityFunc(sdk, data)
 }

@@ -119,7 +119,6 @@ func lensBasicSetup(extra map[string]any) *entityTestSetup {
 		"HANOSNAPCHATLENS_TEST_LENS_ENTID": idmap,
 		"HANOSNAPCHATLENS_TEST_LIVE":      "FALSE",
 		"HANOSNAPCHATLENS_TEST_EXPLAIN":   "FALSE",
-		"HANOSNAPCHATLENS_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["HANOSNAPCHATLENS_TEST_LENS_ENTID"])
@@ -130,7 +129,6 @@ func lensBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["HANOSNAPCHATLENS_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["HANOSNAPCHATLENS_APIKEY"],
 			},
 			extra,
 		})

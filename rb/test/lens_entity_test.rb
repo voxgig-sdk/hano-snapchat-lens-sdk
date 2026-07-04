@@ -43,8 +43,7 @@ class LensEntityTest < Minitest::Test
     lens_ref01_ent = client.Lens(nil)
     lens_ref01_match = {}
 
-    lens_ref01_list_result, err = lens_ref01_ent.list(lens_ref01_match, nil)
-    assert_nil err
+    lens_ref01_list_result = lens_ref01_ent.list(lens_ref01_match, nil)
     assert lens_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def lens_basic_setup(extra)
     "HANOSNAPCHATLENS_TEST_LENS_ENTID" => idmap,
     "HANOSNAPCHATLENS_TEST_LIVE" => "FALSE",
     "HANOSNAPCHATLENS_TEST_EXPLAIN" => "FALSE",
-    "HANOSNAPCHATLENS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def lens_basic_setup(extra)
   if env["HANOSNAPCHATLENS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["HANOSNAPCHATLENS_APIKEY"],
       },
       extra || {},
     ])

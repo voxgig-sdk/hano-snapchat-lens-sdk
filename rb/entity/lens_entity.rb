@@ -45,6 +45,7 @@ class LensEntity
     end
   end
 
+  # @return [Lens, Hash] the current Lens data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class LensEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Lens fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class LensEntity
   
 
   
+  # List Lens items matching the given filter.
+  #
+  # @param reqmatch [LensListMatch, Hash, nil] match filter (any subset of Lens fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Lens>, Array] the matching Lens items; raises HanoSnapchatLensError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

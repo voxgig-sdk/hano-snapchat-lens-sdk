@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## LensEntity
 
 ```lua
-local lens = client:Lens(nil)
+local lens = client:lens(nil)
 ```
 
 ### Fields
@@ -106,7 +105,7 @@ local lens = client:Lens(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Lens():list()
+local results, err = client:lens():list()
 ```
 
 ### Common Methods

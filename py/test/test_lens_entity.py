@@ -50,8 +50,7 @@ class TestLensEntity:
         lens_ref01_ent = client.Lens(None)
         lens_ref01_match = {}
 
-        lens_ref01_list_result, err = lens_ref01_ent.list(lens_ref01_match, None)
-        assert err is None
+        lens_ref01_list_result = lens_ref01_ent.list(lens_ref01_match, None)
         assert isinstance(lens_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _lens_basic_setup(extra):
         "HANOSNAPCHATLENS_TEST_LENS_ENTID": idmap,
         "HANOSNAPCHATLENS_TEST_LIVE": "FALSE",
         "HANOSNAPCHATLENS_TEST_EXPLAIN": "FALSE",
-        "HANOSNAPCHATLENS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _lens_basic_setup(extra):
     if env.get("HANOSNAPCHATLENS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("HANOSNAPCHATLENS_APIKEY"),
             },
             extra or {},
         ])

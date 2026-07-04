@@ -50,8 +50,7 @@ class LensEntityTest extends TestCase
         $lens_ref01_ent = $client->Lens(null);
         $lens_ref01_match = [];
 
-        [$lens_ref01_list_result, $err] = $lens_ref01_ent->list($lens_ref01_match, null);
-        $this->assertNull($err);
+        $lens_ref01_list_result = $lens_ref01_ent->list($lens_ref01_match, null);
         $this->assertIsArray($lens_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function lens_basic_setup($extra)
         "HANOSNAPCHATLENS_TEST_LENS_ENTID" => $idmap,
         "HANOSNAPCHATLENS_TEST_LIVE" => "FALSE",
         "HANOSNAPCHATLENS_TEST_EXPLAIN" => "FALSE",
-        "HANOSNAPCHATLENS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function lens_basic_setup($extra)
     if ($env["HANOSNAPCHATLENS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["HANOSNAPCHATLENS_APIKEY"],
             ],
             $extra ?? [],
         ]);

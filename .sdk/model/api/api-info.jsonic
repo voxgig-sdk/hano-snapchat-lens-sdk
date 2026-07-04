@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "API Support"
         url: "https://lens.snapchat.com/6c47a532fd034b93a4aa64b706cf0610?share_id=fYLE8bhrBH8&locale=en-US"

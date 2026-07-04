@@ -63,14 +63,12 @@ function lens_direct_setup(mockres)
   local env = runner.env_override({
     ["HANOSNAPCHATLENS_TEST_LENS_ENTID"] = {},
     ["HANOSNAPCHATLENS_TEST_LIVE"] = "FALSE",
-    ["HANOSNAPCHATLENS_APIKEY"] = "NONE",
   })
 
   local live = env["HANOSNAPCHATLENS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["HANOSNAPCHATLENS_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

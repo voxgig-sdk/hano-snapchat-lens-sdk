@@ -2,6 +2,8 @@
 
 import { LensEntity } from './entity/LensEntity'
 
+export type * from './HanoSnapchatLensTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class HanoSnapchatLensSDK {
 
 
 
+  _lens?: LensEntity
+
+  // Idiomatic facade: `client.lens.list()` / `client.lens.load({ id })`.
+  get lens(): LensEntity {
+    return (this._lens ??= new LensEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.lens` instead. */
   Lens(data?: any) {
     const self = this
     return new LensEntity(self,data)
