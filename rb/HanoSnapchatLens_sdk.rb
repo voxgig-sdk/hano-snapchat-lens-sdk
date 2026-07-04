@@ -208,13 +208,7 @@ class HanoSnapchatLensSDK
   end
 
 
-  # Idiomatic facade: client.lens.list / client.lens.load({ "id" => ... })
-  def lens
-    require_relative 'entity/lens_entity'
-    @lens ||= LensEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.lens instead.
+  # Canonical facade: client.Lens.list / client.Lens.load({ "id" => ... })
   def Lens(data = nil)
     require_relative 'entity/lens_entity'
     LensEntity.new(self, data)

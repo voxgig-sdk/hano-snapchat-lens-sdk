@@ -31,14 +31,16 @@ from hanosnapchatlens_sdk import HanoSnapchatLensSDK
 client = HanoSnapchatLensSDK()
 ```
 
-### 2. List lenss
+### 2. List lens records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.lens.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    lenss = client.Lens().list({})
+    for lens in lenss:
+        print(lens)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = HanoSnapchatLensSDK.test()
 
-result = client.lens.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+lens = client.Lens().load({"id": "test01"})
+# lens contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -226,7 +229,7 @@ API path: `/6c47a532fd034b93a4aa64b706cf0610`
 
 ### Lens
 
-Create an instance: `const lens = client.lens`
+Create an instance: `lens = client.Lens()`
 
 #### Operations
 
@@ -248,8 +251,8 @@ Create an instance: `const lens = client.lens`
 
 #### Example: List
 
-```ts
-const lenss = await client.lens.list()
+```python
+lenss = client.Lens().list({})
 ```
 
 
@@ -323,7 +326,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-lens = client.lens
+lens = client.Lens()
 lens.load({"id": "example_id"})
 
 # lens.data_get() now returns the loaded lens data

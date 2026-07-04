@@ -26,9 +26,11 @@ import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens'
 
 const client = new HanoSnapchatLensSDK()
 
-// List all lenss
-const lenss = await client.lens.list()
-console.log(lenss.data)
+// List all lenss (returns Lens[])
+const lenss = await client.Lens().list()
+for (const lens of lenss) {
+  console.log(lens)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from hanosnapchatlens_sdk import HanoSnapchatLensSDK
 
 client = HanoSnapchatLensSDK()
 
-# List all lenss
-lenss = client.lens.list()
-print(lenss)
+# List all lenss (returns a list, raises on error)
+lenss = client.Lens().list({})
+for lens in lenss:
+    print(lens)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'hanosnapchatlens_sdk.php';
 
 $client = new HanoSnapchatLensSDK();
 
-// List all lenss (throws on error)
-$lenss = $client->lens()->list();
+// List all lenss (returns an array; throws on error)
+$lenss = $client->Lens()->list();
 print_r($lenss);
 ```
 
@@ -120,8 +123,8 @@ require_relative "HanoSnapchatLens_sdk"
 
 client = HanoSnapchatLensSDK.new
 
-# List all lenss
-lenss = client.lens.list
+# List all lenss (returns an Array; raises on error)
+lenss = client.Lens.list
 puts lenss
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("hano-snapchat-lens_sdk")
 local client = sdk.new()
 
 -- List all lenss
-local lenss, err = client:lens():list()
+local lenss, err = client:Lens():list()
 print(lenss)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = HanoSnapchatLensSDK.test()
-const result = await client.lens.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const lens = await client.Lens().load({ id: 'test01' })
+// lens is a bare Lens populated with mock data
+console.log(lens)
 ```
 
 ### Python
 
 ```python
 client = HanoSnapchatLensSDK.test()
-result = client.lens.load({"id": "test01"})
+lens = client.Lens().load({"id": "test01"})
+print(lens)
 ```
 
 ### PHP
 
 ```php
-$client = HanoSnapchatLensSDK::test();
-$result = $client->lens()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = HanoSnapchatLensSDK::test([
+    "entity" => ["lens" => ["test01" => ["id" => "test01"]]],
+]);
+$lens = $client->Lens()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.Lens(nil).Load(
 ### Ruby
 
 ```ruby
-client = HanoSnapchatLensSDK.test
-result = client.lens.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = HanoSnapchatLensSDK.test({
+  "entity" => { "lens" => { "test01" => { "id" => "test01" } } },
+})
+lens = client.Lens.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:lens():load({ id = "test01" })
+local result, err = client:Lens():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

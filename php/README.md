@@ -29,18 +29,16 @@ require_once 'hanosnapchatlens_sdk.php';
 $client = new HanoSnapchatLensSDK();
 ```
 
-### 2. List lenss
+### 2. List lens records
 
 ```php
 try {
-    $result = $client->lens()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Lens records — iterate directly.
+    $lenss = $client->Lens()->list();
+    foreach ($lenss as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = HanoSnapchatLensSDK::test();
+$client = HanoSnapchatLensSDK::test([
+    "entity" => ["lens" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->lens()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$lens = $client->Lens()->load(["id" => "test01"]);
+print_r($lens);
 ```
 
 ### Use a custom fetch function
@@ -234,7 +236,7 @@ API path: `/6c47a532fd034b93a4aa64b706cf0610`
 
 ### Lens
 
-Create an instance: `const lens = client.lens`
+Create an instance: `$lens = $client->Lens();`
 
 #### Operations
 
@@ -256,8 +258,9 @@ Create an instance: `const lens = client.lens`
 
 #### Example: List
 
-```ts
-const lenss = await client.lens.list()
+```php
+// list() returns an array of Lens records (throws on error).
+$lenss = $client->Lens()->list();
 ```
 
 
@@ -332,7 +335,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$lens = $client->lens();
+$lens = $client->Lens();
 $lens->load(["id" => "example_id"]);
 
 // $lens->dataGet() now returns the loaded lens data

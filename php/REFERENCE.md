@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## LensEntity
 
 ```php
-$lens = $client->lens();
+$lens = $client->Lens();
 ```
 
 ### Fields
@@ -107,7 +107,7 @@ $lens = $client->lens();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->lens()->list([]);
+$results = $client->Lens()->list([]);
 ```
 
 ### Common Methods

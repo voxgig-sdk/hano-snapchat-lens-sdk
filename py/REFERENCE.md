@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## LensEntity
 
 ```python
-lens = client.lens
+lens = client.Lens()
 ```
 
 ### Fields
@@ -102,7 +102,9 @@ lens = client.lens
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.lens.list({})
+results = client.Lens().list({})
+for lens in results:
+    print(lens)
 ```
 
 ### Common Methods

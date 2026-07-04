@@ -233,10 +233,10 @@ class HanoSnapchatLensSDK
 
     private $_lens = null;
 
-    // Idiomatic facade: $client->lens()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Lens() (PHP method
-    // names are case-insensitive).
-    public function lens($data = null)
+    // Canonical facade: $client->Lens()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->lens()
+    // resolves here too.
+    public function Lens($data = null)
     {
         require_once __DIR__ . '/entity/lens_entity.php';
         if ($data === null) {

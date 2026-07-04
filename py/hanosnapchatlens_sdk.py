@@ -220,25 +220,15 @@ class HanoSnapchatLensSDK:
         }
 
 
-    @property
-    def lens(self):
-        """Idiomatic facade: client.lens.list() / client.lens.load({"id": ...})."""
-        from entity.lens_entity import LensEntity
-        cached = getattr(self, "_lens", None)
-        if cached is None:
-            cached = LensEntity(self, None)
-            self._lens = cached
-        return cached
-
-    def Lens(self, data=None):
-        # Deprecated: use client.lens instead.
+    def Lens(self, data=None) -> "LensEntity":
+        """Entity factory: client.Lens().list({}) / client.Lens().load({"id": ...})."""
         from entity.lens_entity import LensEntity
         return LensEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "HanoSnapchatLensSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class HanoSnapchatLensSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.lens_entity import LensEntity

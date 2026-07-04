@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## LensEntity
 
 ```ruby
-lens = client.lens
+lens = client.Lens
 ```
 
 ### Fields
@@ -108,7 +108,7 @@ lens = client.lens
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.lens.list(nil)
+results = client.Lens.list(nil)
 ```
 
 ### Common Methods

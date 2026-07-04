@@ -109,7 +109,7 @@ Alias for `HanoSnapchatLensSDK.test()`.
 ## LensEntity
 
 ```ts
-const lens = client.lens
+const lens = client.Lens()
 ```
 
 ### Fields
@@ -131,7 +131,7 @@ const lens = client.lens
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.lens.list()
+const results = await client.Lens().list()
 ```
 
 ### Common Methods

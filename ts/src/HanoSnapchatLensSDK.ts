@@ -204,14 +204,7 @@ class HanoSnapchatLensSDK {
 
 
 
-  _lens?: LensEntity
-
-  // Idiomatic facade: `client.lens.list()` / `client.lens.load({ id })`.
-  get lens(): LensEntity {
-    return (this._lens ??= new LensEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.lens` instead. */
+  // Entity access: `client.Lens().list()` / `client.Lens().load({ id })`.
   Lens(data?: any) {
     const self = this
     return new LensEntity(self,data)

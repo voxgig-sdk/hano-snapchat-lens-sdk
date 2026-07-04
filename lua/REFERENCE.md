@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## LensEntity
 
 ```lua
-local lens = client:lens(nil)
+local lens = client:Lens(nil)
 ```
 
 ### Fields
@@ -105,7 +105,7 @@ local lens = client:lens(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:lens():list()
+local results, err = client:Lens():list()
 ```
 
 ### Common Methods

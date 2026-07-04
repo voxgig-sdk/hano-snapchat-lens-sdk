@@ -28,16 +28,14 @@ require_relative "HanoSnapchatLens_sdk"
 client = HanoSnapchatLensSDK.new
 ```
 
-### 2. List lenss
+### 2. List lens records
 
 ```ruby
 begin
-  result = client.lens.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Lens records — iterate directly.
+  lenss = client.Lens.list
+  lenss.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = HanoSnapchatLensSDK.test
+client = HanoSnapchatLensSDK.test({
+  "entity" => { "lens" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.lens.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+lens = client.Lens.load({ "id" => "test01" })
+puts lens
 ```
 
 ### Use a custom fetch function
@@ -229,7 +231,7 @@ API path: `/6c47a532fd034b93a4aa64b706cf0610`
 
 ### Lens
 
-Create an instance: `const lens = client.lens`
+Create an instance: `lens = client.Lens`
 
 #### Operations
 
@@ -251,8 +253,9 @@ Create an instance: `const lens = client.lens`
 
 #### Example: List
 
-```ts
-const lenss = await client.lens.list()
+```ruby
+# list returns an Array of Lens records (raises on error).
+lenss = client.Lens.list
 ```
 
 
@@ -327,7 +330,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-lens = client.lens
+lens = client.Lens
 lens.load({ "id" => "example_id" })
 
 # lens.data_get now returns the loaded lens data
