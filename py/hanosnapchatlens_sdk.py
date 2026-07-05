@@ -221,7 +221,7 @@ class HanoSnapchatLensSDK:
 
 
     def Lens(self, data=None) -> "LensEntity":
-        """Entity factory: client.Lens().list({}) / client.Lens().load({"id": ...})."""
+        """Entity factory: client.Lens().list() / client.Lens().load({"id": ...})."""
         from entity.lens_entity import LensEntity
         return LensEntity(self, data)
 

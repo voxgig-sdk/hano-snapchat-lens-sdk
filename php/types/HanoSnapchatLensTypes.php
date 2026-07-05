@@ -24,7 +24,7 @@ class Lens
     public ?string $share_url = null;
 }
 
-/** Match filter for Lens#list (any subset of Lens fields). */
+/** Request payload for Lens#list. */
 class LensListMatch
 {
     public ?string $creator = null;

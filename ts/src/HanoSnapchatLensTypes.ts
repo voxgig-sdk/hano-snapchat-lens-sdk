@@ -15,5 +15,13 @@ export interface Lens {
   share_url?: string
 }
 
-export type LensListMatch = Partial<Lens>
+export interface LensListMatch {
+  creator?: string
+  description?: string
+  feature?: any[]
+  lens_id?: string
+  lens_name?: string
+  locale?: string
+  share_url?: string
+}
 

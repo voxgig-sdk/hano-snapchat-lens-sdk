@@ -19,8 +19,7 @@ type Lens struct {
 	ShareUrl *string `json:"share_url,omitempty"`
 }
 
-// LensListMatch mirrors the lens fields as an all-optional match
-// filter (Go analog of Partial<Lens>).
+// LensListMatch is the typed request payload for Lens.ListTyped.
 type LensListMatch struct {
 	Creator *string `json:"creator,omitempty"`
 	Description *string `json:"description,omitempty"`

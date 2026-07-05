@@ -90,13 +90,13 @@ local lens = client:Lens(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `creator` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `feature` | ``$ARRAY`` | No |  |
-| `lens_id` | ``$STRING`` | No |  |
-| `lens_name` | ``$STRING`` | No |  |
-| `locale` | ``$STRING`` | No |  |
-| `share_url` | ``$STRING`` | No |  |
+| `creator` | `string` | No |  |
+| `description` | `string` | No |  |
+| `feature` | `table` | No |  |
+| `lens_id` | `string` | No |  |
+| `lens_name` | `string` | No |  |
+| `locale` | `string` | No |  |
+| `share_url` | `string` | No |  |
 
 ### Operations
 

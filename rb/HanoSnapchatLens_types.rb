@@ -41,7 +41,7 @@ Lens = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Lens#list (any subset of Lens fields).
+# Request payload for Lens#list.
 #
 # @!attribute [rw] creator
 #   @return [String, nil]

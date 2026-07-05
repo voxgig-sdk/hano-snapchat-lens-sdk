@@ -8,7 +8,7 @@ Complete API reference for the HanoSnapchatLens Python SDK.
 ### Constructor
 
 ```python
-from hano-snapchat-lens_sdk import HanoSnapchatLensSDK
+from hanosnapchatlens_sdk import HanoSnapchatLensSDK
 
 client = HanoSnapchatLensSDK(options)
 ```
@@ -87,22 +87,22 @@ lens = client.Lens()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `creator` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `feature` | ``$ARRAY`` | No |  |
-| `lens_id` | ``$STRING`` | No |  |
-| `lens_name` | ``$STRING`` | No |  |
-| `locale` | ``$STRING`` | No |  |
-| `share_url` | ``$STRING`` | No |  |
+| `creator` | `str` | No |  |
+| `description` | `str` | No |  |
+| `feature` | `list` | No |  |
+| `lens_id` | `str` | No |  |
+| `lens_name` | `str` | No |  |
+| `locale` | `str` | No |  |
+| `share_url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Lens().list({})
+results = client.Lens().list()
 for lens in results:
     print(lens)
 ```

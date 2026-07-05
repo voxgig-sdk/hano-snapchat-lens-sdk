@@ -66,8 +66,12 @@ class LensEntity:
     
 
     
-    def list(self, reqmatch: LensListMatch, ctrl=None) -> list[Lens]:
+    def list(self, reqmatch=None, ctrl=None) -> list[Lens]:
         utility = self._utility
+        # reqmatch is optional: an omitted match lists all records. Treat None
+        # as an empty match so client.Lens().list() works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "list",
             "ctrl": ctrl,

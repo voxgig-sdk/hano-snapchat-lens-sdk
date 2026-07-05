@@ -8,7 +8,7 @@ Complete API reference for the HanoSnapchatLens PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/hano-snapchat-lens_sdk.php';
+require_once __DIR__ . '/hanosnapchatlens_sdk.php';
 
 $client = new HanoSnapchatLensSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = HanoSnapchatLensSDK::test();
 
 Create a new `LensEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): HanoSnapchatLensUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,39 +92,39 @@ $lens = $client->Lens();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `creator` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `feature` | ``$ARRAY`` | No |  |
-| `lens_id` | ``$STRING`` | No |  |
-| `lens_name` | ``$STRING`` | No |  |
-| `locale` | ``$STRING`` | No |  |
-| `share_url` | ``$STRING`` | No |  |
+| `creator` | `string` | No |  |
+| `description` | `string` | No |  |
+| `feature` | `array` | No |  |
+| `lens_id` | `string` | No |  |
+| `lens_name` | `string` | No |  |
+| `locale` | `string` | No |  |
+| `share_url` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Lens()->list([]);
+$results = $client->Lens()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -133,7 +133,7 @@ Set the entity match criteria.
 Create a new `LensEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
