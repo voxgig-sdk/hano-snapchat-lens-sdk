@@ -16,9 +16,9 @@ main: {
           url: "https://lens.snapchat.com"
         }
       ]
+      summary: "The Hano Lens by حنين العزاوي allows users to apply a unique and artistic filter to their selfies, enhancing facial features and adding a touch of creativity."
       title: "Hano Snapchat Lens"
       version: "1.0.0"
+      website: "https://lens.snapchat.com"
     }
   }
-}
-
