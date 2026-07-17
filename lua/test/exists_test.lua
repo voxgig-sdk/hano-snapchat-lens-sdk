@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- HanoSnapchatLens SDK exists test
 
 local sdk = require("hano-snapchat-lens_sdk")
 
