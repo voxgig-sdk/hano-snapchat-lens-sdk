@@ -92,7 +92,7 @@ local lens = client:Lens(nil)
 | --- | --- | --- | --- |
 | `creator` | `string` | No |  |
 | `description` | `string` | No |  |
-| `feature` | `table` | No |  |
+| `features` | `table` | No |  |
 | `lens_id` | `string` | No |  |
 | `lens_name` | `string` | No |  |
 | `locale` | `string` | No |  |

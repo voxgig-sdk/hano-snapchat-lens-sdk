@@ -26,8 +26,8 @@ import {
 describe('LensEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when HANOSNAPCHATLENS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('HANOSNAPCHATLENS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when HANO_SNAPCHAT_LENS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('HANO_SNAPCHAT_LENS_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = HanoSnapchatLensSDK.test()
@@ -63,7 +63,7 @@ describe('LensEntity', async () => {
     const lens_ref01_ent = client.Lens()
     const lens_ref01_match: any = {}
 
-    const lens_ref01_list = await lens_ref01_ent.list(lens_ref01_match)
+    const lens_ref01_list = (await lens_ref01_ent.list(lens_ref01_match)).map((e: any) => e.data())
 
 
   })

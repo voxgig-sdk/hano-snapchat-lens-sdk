@@ -66,11 +66,11 @@ function lens_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "HANOSNAPCHATLENS_TEST_LENS_ENTID" => [],
-        "HANOSNAPCHATLENS_TEST_LIVE" => "FALSE",
+        "HANO_SNAPCHAT_LENS_TEST_LENS_ENTID" => [],
+        "HANO_SNAPCHAT_LENS_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["HANOSNAPCHATLENS_TEST_LIVE"] === "TRUE";
+    $live = $env["HANO_SNAPCHAT_LENS_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

@@ -43,8 +43,8 @@ class HanoSnapchatLensTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('HANOSNAPCHATLENS_TEST_LIVE');
-        $override = self::getenv('HANOSNAPCHATLENS_TEST_OVERRIDE');
+        $live = self::getenv('HANO_SNAPCHAT_LENS_TEST_LIVE');
+        $override = self::getenv('HANO_SNAPCHAT_LENS_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class HanoSnapchatLensTestRunner
             }
         }
 
-        $explain = self::getenv('HANOSNAPCHATLENS_TEST_EXPLAIN');
+        $explain = self::getenv('HANO_SNAPCHAT_LENS_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['HANOSNAPCHATLENS_TEST_EXPLAIN'] = $explain;
+            $m['HANO_SNAPCHAT_LENS_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

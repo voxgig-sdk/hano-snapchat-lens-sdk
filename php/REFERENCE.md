@@ -94,7 +94,7 @@ $lens = $client->Lens();
 | --- | --- | --- | --- |
 | `creator` | `string` | No |  |
 | `description` | `string` | No |  |
-| `feature` | `array` | No |  |
+| `features` | `array` | No |  |
 | `lens_id` | `string` | No |  |
 | `lens_name` | `string` | No |  |
 | `locale` | `string` | No |  |

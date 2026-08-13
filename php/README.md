@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = HanoSnapchatLensSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $lens = $client->Lens()->list();
 print_r($lens);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -248,7 +249,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | --- | --- |
 | `creator` |  |
 | `description` |  |
-| `feature` |  |
+| `features` |  |
 | `lens_id` |  |
 | `lens_name` |  |
 | `locale` |  |
@@ -279,7 +280,7 @@ Create an instance: `$lens = $client->Lens();`
 | --- | --- | --- |
 | `creator` | `string` |  |
 | `description` | `string` |  |
-| `feature` | `array` |  |
+| `features` | `array` |  |
 | `lens_id` | `string` |  |
 | `lens_name` | `string` |  |
 | `locale` | `string` |  |

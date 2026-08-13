@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# HanoSnapchatLens SDK exists test
 
 import pytest
 from hanosnapchatlens_sdk import HanoSnapchatLensSDK

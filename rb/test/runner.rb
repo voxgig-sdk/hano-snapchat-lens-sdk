@@ -23,8 +23,8 @@ module HanoSnapchatLensTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("HANOSNAPCHATLENS_TEST_LIVE")
-    override = getenv("HANOSNAPCHATLENS_TEST_OVERRIDE")
+    live = getenv("HANO_SNAPCHAT_LENS_TEST_LIVE")
+    override = getenv("HANO_SNAPCHAT_LENS_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module HanoSnapchatLensTestRunner
       end
     end
 
-    explain = getenv("HANOSNAPCHATLENS_TEST_EXPLAIN")
-    m["HANOSNAPCHATLENS_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("HANO_SNAPCHAT_LENS_TEST_EXPLAIN")
+    m["HANO_SNAPCHAT_LENS_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

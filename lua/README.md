@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local lens, err = client:Lens():load()
+    local lens, err = client:Lens():list()
     if err then error(err) end
-    -- lens is the loaded record
+    -- lens is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -233,7 +233,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `creator` |  |
 | `description` |  |
-| `feature` |  |
+| `features` |  |
 | `lens_id` |  |
 | `lens_name` |  |
 | `locale` |  |
@@ -264,7 +264,7 @@ Create an instance: `local lens = client:Lens(nil)`
 | --- | --- | --- |
 | `creator` | `string` |  |
 | `description` | `string` |  |
-| `feature` | `table` |  |
+| `features` | `table` |  |
 | `lens_id` | `string` |  |
 | `lens_name` | `string` |  |
 | `locale` | `string` |  |

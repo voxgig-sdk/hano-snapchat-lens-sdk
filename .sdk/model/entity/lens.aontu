@@ -16,7 +16,7 @@ main: kit: entity: lens: {
       type: "`$STRING`"
     }
     {
-      name: "feature"
+      name: "features"
       req: false
       type: "`$ARRAY`"
     }
@@ -81,7 +81,7 @@ main: kit: entity: lens: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.features`"
           }
         }
       ]

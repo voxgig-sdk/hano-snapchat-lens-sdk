@@ -61,11 +61,11 @@ function lens_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["HANOSNAPCHATLENS_TEST_LENS_ENTID"] = {},
-    ["HANOSNAPCHATLENS_TEST_LIVE"] = "FALSE",
+    ["HANO_SNAPCHAT_LENS_TEST_LENS_ENTID"] = {},
+    ["HANO_SNAPCHAT_LENS_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["HANOSNAPCHATLENS_TEST_LIVE"] == "TRUE"
+  local live = env["HANO_SNAPCHAT_LENS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = HanoSnapchatLensSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = HanoSnapchatLensSDK.test({
+  entity: {
+    lens: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const lenss = await client.Lens().list()
-// lenss is an array of bare Lens records populated with mock data
+// lenss is an array of Lens entities, populated with mock data
+// — call lenss[0].data() for the record itself
 console.log(lenss)
 ```
 
@@ -110,7 +119,7 @@ import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens'
 
 const client = new HanoSnapchatLensSDK()
 
-// List all lenss (returns Lens[])
+// List all lenss (returns LensEntity[] — .data() for the record)
 const lenss = await client.Lens().list()
 for (const lens of lenss) {
   console.log(lens)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://lens.snapchat.com/6c47a532fd034b93a4aa64b706cf0610?share_id=fYLE8bhrBH8&locale=en-US](https://lens.snapchat.com/6c47a532fd034b93a4aa64b706cf0610?share_id=fYLE8bhrBH8&locale=en-US)
 

@@ -8,7 +8,7 @@
 export interface Lens {
   creator?: string
   description?: string
-  feature?: any[]
+  features?: any[]
   lens_id?: string
   lens_name?: string
   locale?: string
@@ -18,7 +18,7 @@ export interface Lens {
 export interface LensListMatch {
   creator?: string
   description?: string
-  feature?: any[]
+  features?: any[]
   lens_id?: string
   lens_name?: string
   locale?: string

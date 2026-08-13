@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import HanoSnapchatLensControl
-from core.error import HanoSnapchatLensError
-from core.result import HanoSnapchatLensResult
-from core.spec import HanoSnapchatLensSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import HanoSnapchatLensControl
+from projectname_sdk.core.error import HanoSnapchatLensError
+from projectname_sdk.core.result import HanoSnapchatLensResult
+from projectname_sdk.core.spec import HanoSnapchatLensSpec
 
 
 # True when this SDK was generated with the named feature.

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from hanosnapchatlens_sdk.utility.voxgig_struct import voxgig_struct as vs
 from hanosnapchatlens_sdk import HanoSnapchatLensSDK
-from core import helpers
+from hanosnapchatlens_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _lens_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "HANOSNAPCHATLENS_TEST_LENS_ENTID": {},
-        "HANOSNAPCHATLENS_TEST_LIVE": "FALSE",
+        "HANO_SNAPCHAT_LENS_TEST_LENS_ENTID": {},
+        "HANO_SNAPCHAT_LENS_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("HANOSNAPCHATLENS_TEST_LIVE") == "TRUE"
+    live = env.get("HANO_SNAPCHAT_LENS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

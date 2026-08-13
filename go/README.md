@@ -262,7 +262,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"creator"` |  |
 | `"description"` |  |
-| `"feature"` |  |
+| `"features"` |  |
 | `"lens_id"` |  |
 | `"lens_name"` |  |
 | `"locale"` |  |
@@ -293,7 +293,7 @@ Create an instance: `lens := client.Lens(nil)`
 | --- | --- | --- |
 | `creator` | `string` |  |
 | `description` | `string` |  |
-| `feature` | `[]any` |  |
+| `features` | `[]any` |  |
 | `lens_id` | `string` |  |
 | `lens_name` | `string` |  |
 | `locale` | `string` |  |

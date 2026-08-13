@@ -95,7 +95,7 @@ lens = client.Lens
 | --- | --- | --- | --- |
 | `creator` | `String` | No |  |
 | `description` | `String` | No |  |
-| `feature` | `Array` | No |  |
+| `features` | `Array` | No |  |
 | `lens_id` | `String` | No |  |
 | `lens_name` | `String` | No |  |
 | `locale` | `String` | No |  |

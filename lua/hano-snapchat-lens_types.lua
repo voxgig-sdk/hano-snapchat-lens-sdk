@@ -9,7 +9,7 @@
 ---@class Lens
 ---@field creator? string
 ---@field description? string
----@field feature? table
+---@field features? table
 ---@field lens_id? string
 ---@field lens_name? string
 ---@field locale? string
@@ -18,7 +18,7 @@
 ---@class LensListMatch
 ---@field creator? string
 ---@field description? string
----@field feature? table
+---@field features? table
 ---@field lens_id? string
 ---@field lens_name? string
 ---@field locale? string

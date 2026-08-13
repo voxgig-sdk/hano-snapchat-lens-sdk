@@ -16,11 +16,11 @@
 import pytest
 
 from hanosnapchatlens_sdk import HanoSnapchatLensSDK
-from core.error import HanoSnapchatLensError
-from core.result import HanoSnapchatLensResult
-from core.response import HanoSnapchatLensResponse
-from core.spec import HanoSnapchatLensSpec
-from feature.base_feature import HanoSnapchatLensBaseFeature
+from hanosnapchatlens_sdk.core.error import HanoSnapchatLensError
+from hanosnapchatlens_sdk.core.result import HanoSnapchatLensResult
+from hanosnapchatlens_sdk.core.response import HanoSnapchatLensResponse
+from hanosnapchatlens_sdk.core.spec import HanoSnapchatLensSpec
+from hanosnapchatlens_sdk.feature.base_feature import HanoSnapchatLensBaseFeature
 
 
 def _client():

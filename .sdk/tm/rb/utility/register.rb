@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ HanoSnapchatLensUtility.registrar = ->(u) {
   u.prepare_params = HanoSnapchatLensUtilities::PrepareParams
   u.prepare_path = HanoSnapchatLensUtilities::PreparePath
   u.prepare_query = HanoSnapchatLensUtilities::PrepareQuery
+  u.graphql_body = HanoSnapchatLensUtilities::GraphqlBody
+  u.graphql_errors = HanoSnapchatLensUtilities::GraphqlErrors
   u.result_basic = HanoSnapchatLensUtilities::ResultBasic
   u.result_body = HanoSnapchatLensUtilities::ResultBody
   u.result_headers = HanoSnapchatLensUtilities::ResultHeaders

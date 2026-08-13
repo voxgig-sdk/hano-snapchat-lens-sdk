@@ -19,11 +19,15 @@ import {
 describe('LensDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when HANOSNAPCHATLENS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('HANOSNAPCHATLENS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when HANO_SNAPCHAT_LENS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('HANO_SNAPCHAT_LENS_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new HanoSnapchatLensSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -77,17 +81,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'HANOSNAPCHATLENS_TEST_LENS_ENTID': {},
-    'HANOSNAPCHATLENS_TEST_LIVE': 'FALSE',
+    'HANO_SNAPCHAT_LENS_TEST_LENS_ENTID': {},
+    'HANO_SNAPCHAT_LENS_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.HANOSNAPCHATLENS_TEST_LIVE
+  const live = 'TRUE' === env.HANO_SNAPCHAT_LENS_TEST_LIVE
 
   if (live) {
     const client = new HanoSnapchatLensSDK({
     })
 
-    let idmap: any = env['HANOSNAPCHATLENS_TEST_LENS_ENTID']
+    let idmap: any = env['HANO_SNAPCHAT_LENS_TEST_LENS_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

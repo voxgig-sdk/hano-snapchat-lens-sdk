@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = HanoSnapchatLensSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 lens = client.Lens().list()
 # lens contains the mock response record
 ```
@@ -220,7 +221,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -244,7 +245,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | --- | --- |
 | `creator` |  |
 | `description` |  |
-| `feature` |  |
+| `features` |  |
 | `lens_id` |  |
 | `lens_name` |  |
 | `locale` |  |
@@ -275,7 +276,7 @@ Create an instance: `lens = client.Lens()`
 | --- | --- | --- |
 | `creator` | `str` |  |
 | `description` | `str` |  |
-| `feature` | `list` |  |
+| `features` | `list` |  |
 | `lens_id` | `str` |  |
 | `lens_name` | `str` |  |
 | `locale` | `str` |  |

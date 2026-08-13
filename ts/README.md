@@ -35,7 +35,9 @@ const client = new HanoSnapchatLensSDK()
 
 ### 2. List lens records
 
-`list()` resolves to an array of Lens objects — iterate it directly:
+`list()` resolves to an array of Lens ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const lenss = await client.Lens().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = HanoSnapchatLensSDK.test()
 
 const lens = await client.Lens().list()
-// lens is a bare entity populated with mock response data
+// lens is the entity, populated with mock response data
+// — call lens.data() for the record itself
 console.log(lens)
 ```
 
@@ -286,7 +289,7 @@ The `prepare()` method returns:
 | --- | --- |
 | `creator` |  |
 | `description` |  |
-| `feature` |  |
+| `features` |  |
 | `lens_id` |  |
 | `lens_name` |  |
 | `locale` |  |
@@ -317,7 +320,7 @@ Create an instance: `const lens = client.Lens()`
 | --- | --- | --- |
 | `creator` | `string` |  |
 | `description` | `string` |  |
-| `feature` | `any[]` |  |
+| `features` | `any[]` |  |
 | `lens_id` | `string` |  |
 | `lens_name` | `string` |  |
 | `locale` | `string` |  |

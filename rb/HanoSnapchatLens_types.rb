@@ -16,7 +16,7 @@
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] feature
+# @!attribute [rw] features
 #   @return [Array, nil]
 #
 # @!attribute [rw] lens_id
@@ -33,7 +33,7 @@
 Lens = Struct.new(
   :creator,
   :description,
-  :feature,
+  :features,
   :lens_id,
   :lens_name,
   :locale,
@@ -49,7 +49,7 @@ Lens = Struct.new(
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] feature
+# @!attribute [rw] features
 #   @return [Array, nil]
 #
 # @!attribute [rw] lens_id
@@ -66,7 +66,7 @@ Lens = Struct.new(
 LensListMatch = Struct.new(
   :creator,
   :description,
-  :feature,
+  :features,
   :lens_id,
   :lens_name,
   :locale,

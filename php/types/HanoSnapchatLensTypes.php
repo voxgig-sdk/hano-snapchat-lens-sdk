@@ -17,7 +17,7 @@ class Lens
 {
     public ?string $creator = null;
     public ?string $description = null;
-    public ?array $feature = null;
+    public ?array $features = null;
     public ?string $lens_id = null;
     public ?string $lens_name = null;
     public ?string $locale = null;
@@ -29,7 +29,7 @@ class LensListMatch
 {
     public ?string $creator = null;
     public ?string $description = null;
-    public ?array $feature = null;
+    public ?array $features = null;
     public ?string $lens_id = null;
     public ?string $lens_name = null;
     public ?string $locale = null;

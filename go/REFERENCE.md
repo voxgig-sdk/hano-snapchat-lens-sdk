@@ -100,7 +100,7 @@ fmt.Println(lens.GetName()) // "lens"
 | --- | --- | --- | --- |
 | `creator` | `string` | No |  |
 | `description` | `string` | No |  |
-| `feature` | `[]any` | No |  |
+| `features` | `[]any` | No |  |
 | `lens_id` | `string` | No |  |
 | `lens_name` | `string` | No |  |
 | `locale` | `string` | No |  |

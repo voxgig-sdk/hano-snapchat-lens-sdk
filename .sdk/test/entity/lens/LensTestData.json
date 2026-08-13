@@ -4,7 +4,7 @@
       "LENS00": {
         "creator": "s46",
         "description": "s47",
-        "feature": [],
+        "features": [],
         "lens_id": "LENS01",
         "lens_name": "s4a",
         "locale": "s4b",
@@ -13,7 +13,7 @@
       "LENS01": {
         "creator": "s8c",
         "description": "s8d",
-        "feature": [],
+        "features": [],
         "lens_id": "LENS01",
         "lens_name": "s90",
         "locale": "s91",
@@ -22,7 +22,7 @@
       "LENS02": {
         "creator": "sd2",
         "description": "sd3",
-        "feature": [],
+        "features": [],
         "lens_id": "LENS01",
         "lens_name": "sd6",
         "locale": "sd7",
@@ -35,7 +35,7 @@
       "lens_ref01": {
         "creator": "s118",
         "description": "s119",
-        "feature": [],
+        "features": [],
         "lens_id": "LENS01",
         "lens_name": "s11c",
         "locale": "s11d",

@@ -37,7 +37,7 @@ class LensEntity extends HanoSnapchatLensEntityBase<Lens> {
 
 
 
-  async list(this: any, reqmatch?: LensListMatch, ctrl?: Control): Promise<Lens[]> {
+  async list(this: any, reqmatch?: LensListMatch, ctrl?: Control): Promise<LensEntity[]> {
 
     const utility = this._utility
 

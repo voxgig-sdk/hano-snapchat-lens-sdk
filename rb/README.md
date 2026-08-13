@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = HanoSnapchatLensSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 lens = client.Lens.list()
 puts lens
 ```
@@ -238,7 +239,7 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `creator` |  |
 | `description` |  |
-| `feature` |  |
+| `features` |  |
 | `lens_id` |  |
 | `lens_name` |  |
 | `locale` |  |
@@ -269,7 +270,7 @@ Create an instance: `lens = client.Lens`
 | --- | --- | --- |
 | `creator` | `String` |  |
 | `description` | `String` |  |
-| `feature` | `Array` |  |
+| `features` | `Array` |  |
 | `lens_id` | `String` |  |
 | `lens_name` | `String` |  |
 | `locale` | `String` |  |
