@@ -28,7 +28,7 @@ class HanoSnapchatLensSDK
     utility = HanoSnapchatLensUtility.new
     @_utility = utility
 
-    config = HanoSnapchatLensConfig.make_config
+    config = HanoSnapchatLensConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

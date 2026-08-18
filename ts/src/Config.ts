@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://lens.snapchat.com',
+    base: "https://lens.snapchat.com",
 
     headers: {
       "content-type": "application/json"
@@ -55,53 +55,32 @@ class Config {
     "lens": {
       "fields": [
         {
-          "active": true,
           "name": "creator",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "description",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "features",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 2
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "lens_id",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "lens_name",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "locale",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "share_url",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 6
+          "type": "`$STRING`"
         }
       ],
       "name": "lens",
@@ -111,25 +90,20 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "example": "en-US",
                     "kind": "query",
                     "name": "locale",
                     "orig": "locale",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "fYLE8bhrBH8",
                     "kind": "query",
                     "name": "share_id",
                     "orig": "share_id",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -149,11 +123,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.features`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {

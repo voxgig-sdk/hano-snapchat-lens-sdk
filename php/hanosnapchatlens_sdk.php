@@ -40,7 +40,7 @@ class HanoSnapchatLensSDK
         $utility = new HanoSnapchatLensUtility();
         $this->_utility = $utility;
 
-        $config = HanoSnapchatLensConfig::make_config();
+        $config = HanoSnapchatLensConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

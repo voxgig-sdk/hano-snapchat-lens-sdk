@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from hanosnapchatlens_sdk.config import make_config
+from hanosnapchatlens_sdk.config import shared_config
 from hanosnapchatlens_sdk.features import _make_feature
 from hanosnapchatlens_sdk.core.control import HanoSnapchatLensControl
 from hanosnapchatlens_sdk.core.error import HanoSnapchatLensError
@@ -24,7 +24,7 @@ from hanosnapchatlens_sdk.core.spec import HanoSnapchatLensSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 
