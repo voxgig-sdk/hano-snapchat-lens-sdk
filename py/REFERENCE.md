@@ -87,13 +87,13 @@ lens = client.Lens()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `creator` | `str` | No |  |
-| `description` | `str` | No |  |
-| `features` | `list` | No |  |
-| `lens_id` | `str` | No |  |
-| `lens_name` | `str` | No |  |
-| `locale` | `str` | No |  |
-| `share_url` | `str` | No |  |
+| `creator` | `str` | No | Creator of the lens |
+| `description` | `str` | No | Description of the lens features and functionality |
+| `features` | `list` | No | List of features provided by the lens |
+| `lens_id` | `str` | No | Unique identifier for the lens |
+| `lens_name` | `str` | No | Name of the lens |
+| `locale` | `str` | No | Locale setting for the lens |
+| `share_url` | `str` | No | URL for sharing the lens |
 
 ### Operations
 

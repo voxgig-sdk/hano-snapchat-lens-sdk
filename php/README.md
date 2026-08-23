@@ -247,13 +247,13 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `creator` |  |
-| `description` |  |
-| `features` |  |
-| `lens_id` |  |
-| `lens_name` |  |
-| `locale` |  |
-| `share_url` |  |
+| `creator` | Creator of the lens |
+| `description` | Description of the lens features and functionality |
+| `features` | List of features provided by the lens |
+| `lens_id` | Unique identifier for the lens |
+| `lens_name` | Name of the lens |
+| `locale` | Locale setting for the lens |
+| `share_url` | URL for sharing the lens |
 
 Operations: List.
 
@@ -278,13 +278,13 @@ Create an instance: `$lens = $client->Lens();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `creator` | `string` |  |
-| `description` | `string` |  |
-| `features` | `array` |  |
-| `lens_id` | `string` |  |
-| `lens_name` | `string` |  |
-| `locale` | `string` |  |
-| `share_url` | `string` |  |
+| `creator` | `string` | Creator of the lens |
+| `description` | `string` | Description of the lens features and functionality |
+| `features` | `array` | List of features provided by the lens |
+| `lens_id` | `string` | Unique identifier for the lens |
+| `lens_name` | `string` | Name of the lens |
+| `locale` | `string` | Locale setting for the lens |
+| `share_url` | `string` | URL for sharing the lens |
 
 #### Example: List
 

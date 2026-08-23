@@ -243,13 +243,13 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `creator` |  |
-| `description` |  |
-| `features` |  |
-| `lens_id` |  |
-| `lens_name` |  |
-| `locale` |  |
-| `share_url` |  |
+| `creator` | Creator of the lens |
+| `description` | Description of the lens features and functionality |
+| `features` | List of features provided by the lens |
+| `lens_id` | Unique identifier for the lens |
+| `lens_name` | Name of the lens |
+| `locale` | Locale setting for the lens |
+| `share_url` | URL for sharing the lens |
 
 Operations: List.
 
@@ -274,13 +274,13 @@ Create an instance: `lens = client.Lens()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `creator` | `str` |  |
-| `description` | `str` |  |
-| `features` | `list` |  |
-| `lens_id` | `str` |  |
-| `lens_name` | `str` |  |
-| `locale` | `str` |  |
-| `share_url` | `str` |  |
+| `creator` | `str` | Creator of the lens |
+| `description` | `str` | Description of the lens features and functionality |
+| `features` | `list` | List of features provided by the lens |
+| `lens_id` | `str` | Unique identifier for the lens |
+| `lens_name` | `str` | Name of the lens |
+| `locale` | `str` | Locale setting for the lens |
+| `share_url` | `str` | URL for sharing the lens |
 
 #### Example: List
 

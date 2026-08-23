@@ -6,7 +6,7 @@ The Golang SDK for the HanoSnapchatLens API — an entity-oriented client using 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Lens(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,13 +260,13 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"creator"` |  |
-| `"description"` |  |
-| `"features"` |  |
-| `"lens_id"` |  |
-| `"lens_name"` |  |
-| `"locale"` |  |
-| `"share_url"` |  |
+| `"creator"` | Creator of the lens |
+| `"description"` | Description of the lens features and functionality |
+| `"features"` | List of features provided by the lens |
+| `"lens_id"` | Unique identifier for the lens |
+| `"lens_name"` | Name of the lens |
+| `"locale"` | Locale setting for the lens |
+| `"share_url"` | URL for sharing the lens |
 
 Operations: List.
 
@@ -291,13 +291,13 @@ Create an instance: `lens := client.Lens(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `creator` | `string` |  |
-| `description` | `string` |  |
-| `features` | `[]any` |  |
-| `lens_id` | `string` |  |
-| `lens_name` | `string` |  |
-| `locale` | `string` |  |
-| `share_url` | `string` |  |
+| `creator` | `string` | Creator of the lens |
+| `description` | `string` | Description of the lens features and functionality |
+| `features` | `[]any` | List of features provided by the lens |
+| `lens_id` | `string` | Unique identifier for the lens |
+| `lens_name` | `string` | Name of the lens |
+| `locale` | `string` | Locale setting for the lens |
+| `share_url` | `string` | URL for sharing the lens |
 
 #### Example: List
 

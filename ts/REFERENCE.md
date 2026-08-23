@@ -116,13 +116,13 @@ const lens = client.Lens()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `creator` | `string` | No |  |
-| `description` | `string` | No |  |
-| `features` | `any[]` | No |  |
-| `lens_id` | `string` | No |  |
-| `lens_name` | `string` | No |  |
-| `locale` | `string` | No |  |
-| `share_url` | `string` | No |  |
+| `creator` | `string` | No | Creator of the lens |
+| `description` | `string` | No | Description of the lens features and functionality |
+| `features` | `any[]` | No | List of features provided by the lens |
+| `lens_id` | `string` | No | Unique identifier for the lens |
+| `lens_name` | `string` | No | Name of the lens |
+| `locale` | `string` | No | Locale setting for the lens |
+| `share_url` | `string` | No | URL for sharing the lens |
 
 ### Operations
 

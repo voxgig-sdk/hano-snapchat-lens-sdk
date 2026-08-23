@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'HanoSnapchatLens',
+        slug: "hano-snapchat-lens",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,30 +67,37 @@ class Config {
       "fields": [
         {
           "name": "creator",
+          "short": "Creator of the lens",
           "type": "`$STRING`"
         },
         {
           "name": "description",
+          "short": "Description of the lens features and functionality",
           "type": "`$STRING`"
         },
         {
           "name": "features",
+          "short": "List of features provided by the lens",
           "type": "`$ARRAY`"
         },
         {
           "name": "lens_id",
+          "short": "Unique identifier for the lens",
           "type": "`$STRING`"
         },
         {
           "name": "lens_name",
+          "short": "Name of the lens",
           "type": "`$STRING`"
         },
         {
           "name": "locale",
+          "short": "Locale setting for the lens",
           "type": "`$STRING`"
         },
         {
           "name": "share_url",
+          "short": "URL for sharing the lens",
           "type": "`$STRING`"
         }
       ],

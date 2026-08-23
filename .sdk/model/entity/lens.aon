@@ -8,36 +8,43 @@ main: kit: entity: lens: {
     {
       name: "creator"
       req: false
+      short: "Creator of the lens"
       type: "`$STRING`"
     }
     {
       name: "description"
       req: false
+      short: "Description of the lens features and functionality"
       type: "`$STRING`"
     }
     {
       name: "features"
       req: false
+      short: "List of features provided by the lens"
       type: "`$ARRAY`"
     }
     {
       name: "lens_id"
       req: false
+      short: "Unique identifier for the lens"
       type: "`$STRING`"
     }
     {
       name: "lens_name"
       req: false
+      short: "Name of the lens"
       type: "`$STRING`"
     }
     {
       name: "locale"
       req: false
+      short: "Locale setting for the lens"
       type: "`$STRING`"
     }
     {
       name: "share_url"
       req: false
+      short: "URL for sharing the lens"
       type: "`$STRING`"
     }
   ]

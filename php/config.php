@@ -33,6 +33,9 @@ class HanoSnapchatLensConfig
         return [
             "main" => [
                 "name" => "HanoSnapchatLens",
+                "slug" => "hano-snapchat-lens",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -55,30 +58,37 @@ class HanoSnapchatLensConfig
           'fields' => [
             [
               'name' => 'creator',
+              'short' => 'Creator of the lens',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'description',
+              'short' => 'Description of the lens features and functionality',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'features',
+              'short' => 'List of features provided by the lens',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'lens_id',
+              'short' => 'Unique identifier for the lens',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'lens_name',
+              'short' => 'Name of the lens',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'locale',
+              'short' => 'Locale setting for the lens',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'share_url',
+              'short' => 'URL for sharing the lens',
               'type' => '`$STRING`',
             ],
           ],

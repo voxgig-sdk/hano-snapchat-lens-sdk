@@ -93,13 +93,13 @@ lens = client.Lens
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `creator` | `String` | No |  |
-| `description` | `String` | No |  |
-| `features` | `Array` | No |  |
-| `lens_id` | `String` | No |  |
-| `lens_name` | `String` | No |  |
-| `locale` | `String` | No |  |
-| `share_url` | `String` | No |  |
+| `creator` | `String` | No | Creator of the lens |
+| `description` | `String` | No | Description of the lens features and functionality |
+| `features` | `Array` | No | List of features provided by the lens |
+| `lens_id` | `String` | No | Unique identifier for the lens |
+| `lens_name` | `String` | No | Name of the lens |
+| `locale` | `String` | No | Locale setting for the lens |
+| `share_url` | `String` | No | URL for sharing the lens |
 
 ### Operations
 

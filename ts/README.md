@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,13 +287,13 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `creator` |  |
-| `description` |  |
-| `features` |  |
-| `lens_id` |  |
-| `lens_name` |  |
-| `locale` |  |
-| `share_url` |  |
+| `creator` | Creator of the lens |
+| `description` | Description of the lens features and functionality |
+| `features` | List of features provided by the lens |
+| `lens_id` | Unique identifier for the lens |
+| `lens_name` | Name of the lens |
+| `locale` | Locale setting for the lens |
+| `share_url` | URL for sharing the lens |
 
 Operations: list.
 
@@ -318,13 +318,13 @@ Create an instance: `const lens = client.Lens()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `creator` | `string` |  |
-| `description` | `string` |  |
-| `features` | `any[]` |  |
-| `lens_id` | `string` |  |
-| `lens_name` | `string` |  |
-| `locale` | `string` |  |
-| `share_url` | `string` |  |
+| `creator` | `string` | Creator of the lens |
+| `description` | `string` | Description of the lens features and functionality |
+| `features` | `any[]` | List of features provided by the lens |
+| `lens_id` | `string` | Unique identifier for the lens |
+| `lens_name` | `string` | Name of the lens |
+| `locale` | `string` | Locale setting for the lens |
+| `share_url` | `string` | URL for sharing the lens |
 
 #### Example: List
 

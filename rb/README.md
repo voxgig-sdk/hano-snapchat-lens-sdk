@@ -237,13 +237,13 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `creator` |  |
-| `description` |  |
-| `features` |  |
-| `lens_id` |  |
-| `lens_name` |  |
-| `locale` |  |
-| `share_url` |  |
+| `creator` | Creator of the lens |
+| `description` | Description of the lens features and functionality |
+| `features` | List of features provided by the lens |
+| `lens_id` | Unique identifier for the lens |
+| `lens_name` | Name of the lens |
+| `locale` | Locale setting for the lens |
+| `share_url` | URL for sharing the lens |
 
 Operations: List.
 
@@ -268,13 +268,13 @@ Create an instance: `lens = client.Lens`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `creator` | `String` |  |
-| `description` | `String` |  |
-| `features` | `Array` |  |
-| `lens_id` | `String` |  |
-| `lens_name` | `String` |  |
-| `locale` | `String` |  |
-| `share_url` | `String` |  |
+| `creator` | `String` | Creator of the lens |
+| `description` | `String` | Description of the lens features and functionality |
+| `features` | `Array` | List of features provided by the lens |
+| `lens_id` | `String` | Unique identifier for the lens |
+| `lens_name` | `String` | Name of the lens |
+| `locale` | `String` | Locale setting for the lens |
+| `share_url` | `String` | URL for sharing the lens |
 
 #### Example: List
 
