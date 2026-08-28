@@ -16,13 +16,8 @@
 ---@field share_url? string
 
 ---@class LensListMatch
----@field creator? string
----@field description? string
----@field features? table
----@field lens_id? string
----@field lens_name? string
 ---@field locale? string
----@field share_url? string
+---@field share_id? string
 
 local M = {}
 

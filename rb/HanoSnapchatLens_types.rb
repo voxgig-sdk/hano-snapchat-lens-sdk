@@ -43,34 +43,14 @@ Lens = Struct.new(
 
 # Request payload for Lens#list.
 #
-# @!attribute [rw] creator
-#   @return [String, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] features
-#   @return [Array, nil]
-#
-# @!attribute [rw] lens_id
-#   @return [String, nil]
-#
-# @!attribute [rw] lens_name
-#   @return [String, nil]
-#
 # @!attribute [rw] locale
 #   @return [String, nil]
 #
-# @!attribute [rw] share_url
+# @!attribute [rw] share_id
 #   @return [String, nil]
 LensListMatch = Struct.new(
-  :creator,
-  :description,
-  :features,
-  :lens_id,
-  :lens_name,
   :locale,
-  :share_url,
+  :share_id,
   keyword_init: true
 )
 

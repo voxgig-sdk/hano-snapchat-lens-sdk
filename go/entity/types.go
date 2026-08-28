@@ -25,13 +25,8 @@ type Lens struct {
 
 // LensListMatch is the typed request payload for Lens.ListTyped.
 type LensListMatch struct {
-	Creator *string `json:"creator,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Features *[]any `json:"features,omitempty"`
-	LensId *string `json:"lens_id,omitempty"`
-	LensName *string `json:"lens_name,omitempty"`
 	Locale *string `json:"locale,omitempty"`
-	ShareUrl *string `json:"share_url,omitempty"`
+	ShareId *string `json:"share_id,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

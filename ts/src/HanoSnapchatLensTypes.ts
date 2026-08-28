@@ -16,12 +16,7 @@ export interface Lens {
 }
 
 export interface LensListMatch {
-  creator?: string
-  description?: string
-  features?: any[]
-  lens_id?: string
-  lens_name?: string
   locale?: string
-  share_url?: string
+  share_id?: string
 }
 

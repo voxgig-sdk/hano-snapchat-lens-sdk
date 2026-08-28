@@ -27,12 +27,7 @@ class Lens
 /** Request payload for Lens#list. */
 class LensListMatch
 {
-    public ?string $creator = null;
-    public ?string $description = null;
-    public ?array $features = null;
-    public ?string $lens_id = null;
-    public ?string $lens_name = null;
     public ?string $locale = null;
-    public ?string $share_url = null;
+    public ?string $share_id = null;
 }
 

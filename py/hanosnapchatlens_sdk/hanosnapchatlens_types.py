@@ -27,10 +27,5 @@ class Lens(TypedDict, total=False):
 
 
 class LensListMatch(TypedDict, total=False):
-    creator: str
-    description: str
-    features: list
-    lens_id: str
-    lens_name: str
     locale: str
-    share_url: str
+    share_id: str
