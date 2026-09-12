@@ -95,8 +95,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/6c47a532fd034b93a4aa64b706cf0610",
-                ["parts"] = {
-                  "6c47a532fd034b93a4aa64b706cf0610",
+                ["segments"] = {
+                  {
+                    ["lit"] = "6c47a532fd034b93a4aa64b706cf0610",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -107,6 +109,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.features`",
+                },
+                ["parts"] = {
+                  "6c47a532fd034b93a4aa64b706cf0610",
                 },
               },
             },

@@ -1,6 +1,14 @@
 # HanoSnapchatLens SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -116,8 +124,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/6c47a532fd034b93a4aa64b706cf0610",
-                "parts": [
-                  "6c47a532fd034b93a4aa64b706cf0610",
+                "segments": [
+                  {
+                    "lit": "6c47a532fd034b93a4aa64b706cf0610",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -129,6 +139,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.features`",
                 },
+                "parts": [
+                  "6c47a532fd034b93a4aa64b706cf0610",
+                ],
               },
             ],
           },
