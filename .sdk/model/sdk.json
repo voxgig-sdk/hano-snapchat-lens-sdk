@@ -847,7 +847,7 @@
             "registry": {
               "active": false,
               "name": "npm",
-              "package": "",
+              "package": "@voxgig-sdk/hano-snapchat-lens-sdk",
               "state": "pending",
               "url": "https://registry.npmjs.org",
               "vault": {

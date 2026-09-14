@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens'
+import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens-sdk'
 
 const client = new HanoSnapchatLensSDK()
 ```
@@ -415,7 +415,7 @@ hano-snapchat-lens/
 Import the SDK from the package root:
 
 ```ts
-import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens'
+import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens-sdk'
 ```
 
 ### Entity state

@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/hano-snapchat-lens",
+  "name": "@voxgig-sdk/hano-snapchat-lens-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the Hano Snapchat Lens public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [

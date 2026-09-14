@@ -105,7 +105,7 @@ local results, err = client:Lens():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
+| TypeScript | `@voxgig-sdk/hano-snapchat-lens-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
 | Python | `voxgig-sdk-hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
 | PHP | `voxgig-sdk/hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/hano-snapchat-lens-sdk/go` | `go get github.com/voxgig-sdk/hano-snapchat-lens-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Lens():list()
 ### TypeScript
 
 ```ts
-import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens'
+import { HanoSnapchatLensSDK } from '@voxgig-sdk/hano-snapchat-lens-sdk'
 
 const client = new HanoSnapchatLensSDK()
 
