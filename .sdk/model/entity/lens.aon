@@ -75,6 +75,12 @@ main: kit: entity: lens: {
               }
             ]
           }
+          contract: {
+            id: "GET /6c47a532fd034b93a4aa64b706cf0610"
+            json: "{\"operationId\":\"getHanoLens\",\"parameters\":[{\"description\":\"The unique sharing identifier for the lens\",\"in\":\"query\",\"name\":\"share_id\",\"required\":false,\"schema\":{\"example\":\"fYLE8bhrBH8\",\"type\":\"string\"}},{\"description\":\"The locale for the lens display (e.g., en-US)\",\"in\":\"query\",\"name\":\"locale\",\"required\":false,\"schema\":{\"default\":\"en-US\",\"example\":\"en-US\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"creator\":{\"description\":\"Creator of the lens\",\"example\":\"حنين العزاوي\",\"type\":\"string\"},\"description\":{\"description\":\"Description of the lens features and functionality\",\"type\":\"string\"},\"features\":{\"description\":\"List of features provided by the lens\",\"example\":[\"facial enhancement\",\"artistic filter\",\"makeup effects\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"lens_id\":{\"description\":\"Unique identifier for the lens\",\"example\":\"6c47a532fd034b93a4aa64b706cf0610\",\"type\":\"string\"},\"lens_name\":{\"description\":\"Name of the lens\",\"example\":\"Hano Lens\",\"type\":\"string\"},\"locale\":{\"description\":\"Locale setting for the lens\",\"type\":\"string\"},\"share_url\":{\"description\":\"URL for sharing the lens\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successfully retrieved Hano Lens details\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters provided\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message indicating lens was not found\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Lens not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/6c47a532fd034b93a4aa64b706cf0610"
           segments: [

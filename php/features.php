@@ -4,7 +4,10 @@ declare(strict_types=1);
 // HanoSnapchatLens SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class HanoSnapchatLensFeatures
@@ -14,8 +17,14 @@ class HanoSnapchatLensFeatures
         switch ($name) {
             case "base":
                 return new HanoSnapchatLensBaseFeature();
+            case "ratelimit":
+                return new HanoSnapchatLensRatelimitFeature();
+            case "retry":
+                return new HanoSnapchatLensRetryFeature();
             case "test":
                 return new HanoSnapchatLensTestFeature();
+            case "timeout":
+                return new HanoSnapchatLensTimeoutFeature();
             default:
                 return new HanoSnapchatLensBaseFeature();
         }
@@ -31,7 +40,10 @@ class HanoSnapchatLensFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
