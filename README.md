@@ -105,12 +105,12 @@ local results, err = client:Lens():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/hano-snapchat-lens-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
-| Python | `voxgig-sdk-hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
-| PHP | `voxgig-sdk/hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
+| TypeScript | `@voxgig-sdk/hano-snapchat-lens-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/tags) |
+| Python | `voxgig-sdk-hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/tags) |
+| PHP | `voxgig-sdk/hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/hano-snapchat-lens-sdk/go` | `go get github.com/voxgig-sdk/hano-snapchat-lens-sdk/go@latest` |
-| Ruby | `voxgig-sdk-hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
-| Lua | `voxgig-sdk-hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/releases) |
+| Ruby | `voxgig-sdk-hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/tags) |
+| Lua | `voxgig-sdk-hano-snapchat-lens` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hano-snapchat-lens-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/hano-snapchat-lens-sdk/go-cli` | `go install github.com/voxgig-sdk/hano-snapchat-lens-sdk/go-cli/cmd/hano-snapchat-lens@latest` |
 | Go MCP server | `github.com/voxgig-sdk/hano-snapchat-lens-sdk/go-mcp` | `go get github.com/voxgig-sdk/hano-snapchat-lens-sdk/go-mcp@latest` |
 
